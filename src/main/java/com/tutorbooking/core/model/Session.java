@@ -5,10 +5,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import lombok.Builder;
 import lombok.Data;
-import org.omg.CORBA.PRIVATE_MEMBER;
 
 @Builder
 @Data
@@ -20,8 +20,10 @@ public class Session {
   private Long id;
 
   @ManyToOne
+  @JoinColumn(name = "tutor_id")
   private Tutor tutor;
   @ManyToOne
+  @JoinColumn(name = "student_id")
   private Student student;
 
   private Instant startTime;
