@@ -1,4 +1,4 @@
-package com.tutorbooking.core.model;
+package com.tutorbooking.core.models;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -10,8 +10,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
-@Builder
 @Data
 @Entity
 public class Tutor implements Serializable {
@@ -26,4 +26,6 @@ public class Tutor implements Serializable {
   @JoinColumn(name = "tutor_id", referencedColumnName = "id")
   private List<Session> sessionList;
 
+  public Tutor() {
+  }
 }

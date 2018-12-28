@@ -1,4 +1,4 @@
-package com.tutorbooking.core.model;
+package com.tutorbooking.core.models;
 
 import java.time.Instant;
 import javax.persistence.Entity;
@@ -10,7 +10,6 @@ import javax.persistence.ManyToOne;
 import lombok.Builder;
 import lombok.Data;
 
-@Builder
 @Data
 @Entity
 public class Session {
@@ -29,4 +28,7 @@ public class Session {
   private Instant startTime;
   private Instant endTime;
 
+
+  public Session() {
+  }
 }

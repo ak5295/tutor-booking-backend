@@ -1,4 +1,4 @@
-package com.tutorbooking.core.model;
+package com.tutorbooking.core.models;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -9,11 +9,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
-import lombok.Builder;
-import lombok.Data;
+import lombok.Getter;
 
-@Builder
-@Data
+@Getter
 @Entity
 public class Student {
 
@@ -29,4 +27,21 @@ public class Student {
   @JoinColumn(name = "student_id", referencedColumnName = "id")
   private List<Session> sessionList;
 
+  public Student() {
+  }
+
+  public Student setFirstName(String firstName) {
+    this.firstName = firstName;
+    return this;
+  }
+
+  public Student setLastName(String lastName) {
+    this.lastName = lastName;
+    return this;
+  }
+
+  public Student setSessionList(List<Session> sessionList) {
+    this.sessionList = sessionList;
+    return this;
+  }
 }

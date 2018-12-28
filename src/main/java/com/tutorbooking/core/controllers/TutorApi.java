@@ -1,6 +1,6 @@
-package com.tutorbooking.core.controller;
+package com.tutorbooking.core.controllers;
 
-import com.tutorbooking.core.model.Tutor;
+import com.tutorbooking.core.models.Tutor;
 import java.util.LinkedList;
 import java.util.List;
 import org.springframework.http.HttpStatus;
@@ -16,8 +16,8 @@ public class TutorApi {
   @GetMapping("")
   public ResponseEntity<?> getTutors() {
     List<Tutor> list = new LinkedList<>();
-    list.add(Tutor.builder().id(1L).firstName("John").lastName("Carpenter").build());
-    list.add(Tutor.builder().id(2L).firstName("Peter").lastName("Smith").build());
+//    list.add(Tutor.builder().id(1L).firstName("John").lastName("Carpenter").build());
+//    list.add(Tutor.builder().id(2L).firstName("Peter").lastName("Smith").build());
 
     return new ResponseEntity<>(list, HttpStatus.OK);
   }
